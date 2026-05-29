@@ -1,0 +1,171 @@
+{
+  "info": {
+    "_postman_id": "04b999dd-a8b6-4059-9770-805f9ab8ff7c",
+    "name": "Class Booking API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "32333353"
+  },
+  "item": [
+    {
+      "name": "Create Offering",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Saturday Batch\",\r\n    \"teacherId\": 1,\r\n    \"teacherTimezone\": \"Asia/Kolkata\",\r\n    \"courseId\": 1\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/teacher/offerings",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "teacher",
+            "offerings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add Session",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"offeringId\": 2,\r\n    \"startTime\": \"2026-06-14T18:30:00+05:30\",\r\n    \"endTime\": \"2026-06-14T19:30:00+05:30\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/teacher/sessions",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "teacher",
+            "sessions"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Teacher Offerings",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/api/teacher/offerings/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "teacher",
+            "offerings",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Available Offerings",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/api/parent/offerings?timezone=America/New_York",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "parent",
+            "offerings"
+          ],
+          "query": [
+            {
+              "key": "timezone",
+              "value": "America/New_York"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Book Offering",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"parentId\": 1,\r\n    \"parentTimezone\": \"America/New_York\",\r\n    \"offeringId\": 2\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/parent/bookings",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "parent",
+            "bookings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Bookings",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/api/parent/bookings/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "parent",
+            "bookings",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
